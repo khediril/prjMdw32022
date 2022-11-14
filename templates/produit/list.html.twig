@@ -1,0 +1,13 @@
+{% extends 'maBase.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+<h1>Liste de tous les produits </h1>
+{% for p in produits %}
+    * {{ p.nom }} - {{ p.id }} <br>
+{% else %}
+    No users have been found.
+{% endfor %}
+
+{% endblock %}
