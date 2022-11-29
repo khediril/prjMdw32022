@@ -1,0 +1,16 @@
+{% extends 'maBase.html.twig' %}
+
+{% block title %}Ajout produit{% endblock %}
+
+{% block body %}
+
+<h1>Ajout d'un nouveau produit</h1>
+
+ {{ form_start(maform) }} 
+  {{ form_widget(maform) }} 
+ <input type="submit" value="Ajouter">
+ {{ form_end(maform) }} 
+
+
+
+{% endblock %}

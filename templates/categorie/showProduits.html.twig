@@ -1,0 +1,36 @@
+{% extends 'maBase.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+<div class="container">
+<h1>Liste des produits de la categorie : {{ categorie.nom }} </h1>
+<table class="table">
+<thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Details</th>
+      <th scope="col">Supprimer</th>
+
+    </tr>
+  </thead>
+  <tbody>
+{% for p in produits %}
+   <tbody>
+    <tr>
+      <th scope="row">{{ p.id }}</th>
+      <td>{{ p.nom }}</td>
+      <td><a href="{{ path("app_produit_lire",{'id':p.id})}}">Voir details</a></td>
+      <td><a href="{{ path("app_produit_delete",{'id':p.id})}}">Supprimer</a></td>
+
+    </tr>
+
+   
+{% else %}
+    No users have been found.
+{% endfor %}
+ </tbody>
+</table>
+</div>
+{% endblock %}

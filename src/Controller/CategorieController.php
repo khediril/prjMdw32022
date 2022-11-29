@@ -55,6 +55,16 @@ class CategorieController extends AbstractController
             'categorie' => $categorie,
         ]);
     }
+     /**
+     * @Route("/produits/{id}", name="app_categorie_produits", methods={"GET"})
+     */
+    public function showProduits(Categorie $categorie): Response
+    {
+        $produits = $categorie->getProduits();
+        return $this->render('categorie/showProduits.html.twig', [
+            'categorie' => $categorie,'produits' => $produits
+        ]);
+    }
 
     /**
      * @Route("/{id}/edit", name="app_categorie_edit", methods={"GET", "POST"})
